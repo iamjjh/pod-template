@@ -13,14 +13,14 @@ module Pod
 
     def perform
 #      keep_demo = configurator.ask_with_answers("Would you like to include a demo application with your library", ["Yes", "No"]).to_sym
-      keep_demo = "Yes".to_sym
+      keep_demo = "yes".to_sym
 
 #      framework = configurator.ask_with_answers("Which testing frameworks will you use", ["Quick", "None"]).to_sym
-      framework = "Quick".to_sym
+      framework = "quick".to_sym
       case framework
         when :quick
-          configurator.add_pod_to_podfile "Quick', '~> 1.2.0"
-          configurator.add_pod_to_podfile "Nimble', '~> 7.0"
+          configurator.add_pod_to_podfile "Quick"
+          configurator.add_pod_to_podfile "Nimble"
           configurator.set_test_framework "quick", "swift", "swift"
 
         when :none
@@ -28,7 +28,7 @@ module Pod
       end
 
 #      snapshots = configurator.ask_with_answers("Would you like to do view based testing", ["Yes", "No"]).to_sym
-      snapshots = "No".to_sym
+      snapshots = "no".to_sym
       case snapshots
         when :yes
           configurator.add_pod_to_podfile "FBSnapshotTestCase' , '~> 2.1.4"
