@@ -19,8 +19,8 @@ module Pod
       framework = "Quick".to_sym
       case framework
         when :quick
-          configurator.add_pod_to_podfile "Quick'
-          configurator.add_pod_to_podfile "Nimble'
+          configurator.add_pod_to_podfile "Quick"
+          configurator.add_pod_to_podfile "Nimble"
           configurator.set_test_framework "quick", "swift", "swift"
 
         when :none
